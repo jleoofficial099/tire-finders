@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vehicle Fitment Finder</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="topbar"><a class="brand" href="#"><span class="brand-mark">VF</span><span>FITMENT<span class="muted"> GARAGE</span></span></a><span class="top-note">VEHICLE COMPATIBILITY</span></header>
+<main>
+<section class="hero">
+  <div class="eyebrow"><span class="dot"></span> FIND THE RIGHT FIT</div>
+  <h1>Find parts that fit<br><span>your ride.</span></h1>
+  <p class="hero-copy">Choose your vehicle to narrow down compatible applications. Start with the type, then select the year, make and model.</p>
+  <div class="hero-stats"><div><strong id="recordCount">30,938</strong><span>VEHICLE RECORDS</span></div><div><strong>3</strong><span>VEHICLE TYPES</span></div><div><strong>1930–2027</strong><span>MODEL YEARS</span></div></div>
+</section>
+<section class="finder card">
+  <div class="section-heading"><div><div class="eyebrow">VEHICLE SELECTOR</div><h2>What do you ride?</h2></div><button id="resetBtn" class="reset-btn" type="button">Reset filters ↺</button></div>
+  <div class="filters">
+    <label>Vehicle type <span>01</span><select id="typeSelect"><option value="">All vehicle types</option></select></label>
+    <label>Year <span>02</span><select id="yearSelect" disabled><option value="">Select year</option></select></label>
+    <label>Make <span>03</span><select id="makeSelect" disabled><option value="">Select make</option></select></label>
+    <label>Model <span>04</span><select id="modelSelect" disabled><option value="">Select model</option></select></label>
+  </div>
+  <div class="filter-footer"><div class="status"><span class="status-dot"></span><span id="statusText">Select a vehicle type to begin.</span></div><button id="findBtn" class="primary-btn" type="button">Find my vehicle <span>→</span></button></div>
+</section>
+<section id="results" class="results" hidden>
+  <div class="results-head"><div><div class="eyebrow">MATCHING APPLICATION</div><h2>Your selected vehicle</h2></div><span class="match-pill" id="matchPill">MATCH FOUND</span></div>
+  <div class="vehicle-result"><div class="bike-icon">⌁</div><div class="vehicle-info"><h3 id="vehicleTitle">Vehicle</h3><p id="vehicleSubtitle">Selected application</p><div class="tags" id="vehicleTags"></div></div></div>
+  <div class="notice"><strong>Vehicle selected:</strong> tire listings are imported only for some vehicles (currently 2026 BMW F800GS and 2026 Beta 390 RS, Street Bike). Confirm exact tire fitment and sizes with the manufacturer before purchase.</div>
+</section>
+
+<section class="tire-catalog card" id="tireCatalog" hidden>
+  <div class="catalog-top"><div><div class="eyebrow" id="catalogVehicleLabel">STREET BIKE</div><h2>Find your tires.</h2><p class="catalog-copy" id="catalogCopy">Front and rear tire listings imported from your supplied CSV files.</p></div><div class="catalog-count"><strong id="productCount">0</strong><span>LISTINGS</span></div></div>
+  <div class="catalog-controls"><div class="pos-toggle"><button type="button" class="pos-btn active" data-pos="Front">FRONT TIRES</button><button type="button" class="pos-btn" data-pos="Rear">REAR TIRES</button></div><input id="productSearch" type="search" placeholder="Search brand or tire name…" aria-label="Search tires"><select id="productSort" aria-label="Sort products"><option value="featured">Sort: Featured</option><option value="price-asc">Price: Low to high</option><option value="price-desc">Price: High to low</option><option value="rating">Top rated</option></select></div>
+  <div id="tireGrid" class="tire-grid" aria-live="polite"></div><p id="emptyProducts" class="empty-products" hidden>No tires match your search.</p>
+  <p class="catalog-footnote">Prices and product availability are based on the supplied CSV snapshots and may change on the retailer's website.</p>
+</section>
+
+<section class="below-grid">
+  <article class="mini-card"><div class="mini-icon">⌕</div><h3>Precise selection</h3><p>Filter the supplied application data by type, year, make and model.</p></article>
+  <article class="mini-card"><div class="mini-icon">⚙</div><h3>Laravel-ready</h3><p>Backend integration files include API routes, controller, migration and an import seeder.</p></article>
+  <article class="mini-card"><div class="mini-icon">↗</div><h3>Expandable catalog</h3><p>Add tire sizes, brands, inventory, prices and rear fitment as separate product data.</p></article>
+</section>
+</main>
+<footer>VEHICLE FITMENT FINDER <span>Frontend demo · Laravel API integration included</span></footer>
+<script src="assets/app.js"></script>
+</body></html>
